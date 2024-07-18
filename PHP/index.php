@@ -58,45 +58,34 @@
     }//fim do if
     function inteiroParaBinario($num1){
         $binario = "";
-        //$resto = 0;
-        //$resultado = 0;
-        
-        while($num1 >=1){
-            $binario .= $num1 % 2;
-            $num1 = $num1 / 2;
-        }
+        $resto = 0;
+        $resultado = 0;
 
-        //Olhar depois
-        //while($num1 != 1){
-           // $resultado = round($num1 / 2);
-           // $resto = $num1 % 2;
-           // $binario .= $resto;
-            //$num1 = $resultado;  
-        //}//fim do while
-
-        //if($num1 == 1){
-         //   $binario .= 1;
-        //}//fim do if
+        while($num1 >= 1){
+            $resultado = $num1 / 2;
+            $resto = $num1 % 2;
+            $binario .= $resto;
+            $num1 = $resultado;  
+        }//fim do while
 
         return strrev($binario);
     }//Fim da função
  
-    //binário em decimal strlen - tamanho 
-    //substr(texto, posicao inicial, posicao que para e não aparece) = pega todo o conteudo do texto informado
+    //binário em decimal
+    //strlen - tamanho 
+    //substr(texto, posicao inicial, comprimento = quantos digitos a partir da posição inicials) = pega todo o conteudo do texto informado
     function binarioParaDecimal($num1){
-        $contador = 0
-        $decimal = 0
-        while($contador != strlen($num1))
-            if(substr($num1, $contador, $contador + 1) == 1){
-
-            }
-            else{
-
+        $contador = 0;
+        $decimal = 0;
+        while($contador != strlen($num1)){
+            if(substr($num1, $contador, 1) == 1){
+                $decimal = $decimal + (2 ** (strlen($num1) - ($contador + 1)));
             }
             $contador = $contador + 1;
+        } 
         return $decimal;
     }//Fim da função
 
-    echo "<br>binário: " . inteiroParaBinario(6);
-    echo "<br>decimal: " . binarioParaDecimal(110);
+    echo "<br>binário: " . inteiroParaBinario(16);
+    echo "<br>decimal: " . binarioParaDecimal(1010);
 ?>
