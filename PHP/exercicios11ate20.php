@@ -12,6 +12,7 @@
         <?php
             include 'funcoes.php'; 
         ?>
+        <a href="./index.php"><h3> Cálculos </h3></a>
         <a href="./exercicios2ate10.php"><h3> Exercícios 02 até 10 </h3></a>
         <a href="./exercicio16.php"><h3> Exercício 16 </h3></a>
         <a href="./exercicio17.php"><h3> Exercício 17 </h3></a>
@@ -31,7 +32,8 @@
                     "\nExercicio13: " . exercicio13($num1).
                     "\nExercicio14: " . $num1. " tem " . exercicio14($num1) . " vogal(is)".
                     "\nExercicio15: " . exercicio15($num1) . 
-                    "\nExercicio18: " . exercicio18($num1);
+                    "\nExercicio18: " . exercicio18($num1).
+                    "\nExercicio20: " . exercicio20($num1);
             ?>
         </textArea>
     </form>

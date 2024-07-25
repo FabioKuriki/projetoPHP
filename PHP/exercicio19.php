@@ -17,14 +17,18 @@
             <?php
             ?>
         </textArea>
-        <label>Quantidade de palavras: </label>
-        <input type="text" id="num1" name="palavras" readOnly/>
-
         <button> Calcular
             <?php
                 $texto = $_POST['texto'];
             ?>
         </button><br><br>
+        <label>Quantidade de palavras: 
+            <?php
+                echo exercicio19($texto);
+            ?>
+        </label>
+           
+        </input>
     </form>
 </body>
 </html>

@@ -301,23 +301,23 @@
 
     //Verificar se é primo
     function exercicio10($num1){
+        $i = $num1 - 1;
+        
         if($num1 < 2){
-            return "Não é primo";
+            return "O número informado precisa ser maior que 1";
         }
         else{
-            if($num1 == 2 || $num1 == 3 || $num1 == 5 || $num1 == 7){
-                return "É primo";
-            }
-            else{
-                if($num1 % 2 == 0 || $num1 % 3 == 0 || $num1 % 5 == 0 || $num1 % 7 == 0 || $num1 % 11 == 0){
+            while($i != 1){
+                if($num1 % $i == 0){
                     return "Não é primo";
                 }
-                else{
-                    return "É primo";
-                }
-            }   
+                $i--;
+            }
+            return "É primo";
         }
     }//Fim da função
+
+
 
     //Digitar palavra e verificar se é um palíndromo
     //palavra que mesmo lendo de trás para frente da no mesmo (ex: mirim == mirim no inverso)
@@ -464,6 +464,7 @@
 
     //Pegar um número e mostrar os seus divisores(números pelo qual pode ser dividido, ex: 6 pode ser dividido por 1,2,3,6)
     function exercicio18($num){
+        $num = (int)$num;
         $i = 0;
         $divisores = "";
         if($num == 0){
@@ -482,8 +483,48 @@
     }//Fim da função
 
     //Pegar um texto e contar as palavras
+    //espaço é considerado no comprimento
     //usar um contador, usar o negocio de pegar comprimento, usar o espaço como condição para separar cada palavra?
-    function exercicio19(){
+    function exercicio19($texto){
+        return str_word_count($texto);
+    }//Fim da função
+
+    //Pegar um número e calcular a sequência de Fibonnaci até esse número
+    function exercicio20($num){
+        $num = (int)$num;
+        $contador = 0;
+        $sequencia = "";
+        $primeiraPosicao = 1;
+        $segundaPosicao = 1;
+        $soma = 0;
+
+        if($num < 1){
+            return "Informe um valor maior ou igual a 1";
+        }
         
+        if($segundaPosicao == 1){
+            $sequencia = $sequencia . $primeiraPosicao;
+            $sequencia = $sequencia . ", " . $segundaPosicao;
+        }
+
+        while($soma < $num + 1 ){
+            $soma = $primeiraPosicao + $segundaPosicao;
+            if($num >= 2){
+                if($soma >= $num){
+                    break;
+                }
+                else{
+                    $sequencia = $sequencia . ", " . $soma;
+                    $primeiraPosicao = $segundaPosicao;
+                    $segundaPosicao = $soma;       
+                }
+            }
+            else{
+                break;
+            }
+            
+            
+        }//Fim do while
+        return $sequencia;
     }//Fim da função
 ?>

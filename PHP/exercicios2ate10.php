@@ -7,11 +7,12 @@
     <title>Exercícios</title>
 </head>
 <body>
-    <h1> Exercícios </h1>
+    <h1> Exercícios 02 até 10 </h1>
     <form method="POST">
         <?php
             include 'funcoes.php'; 
         ?>
+        <a href="./index.php"><h3> Cálculos </h3></a>
         <a href="./exercicio06.php"><h3> Exercício 06 </h3></a>
         <a href="./exercicios11ate20.php"><h3> Exercícios 11 até 20 </h3></a>
         <label>Informe um número: </label>
